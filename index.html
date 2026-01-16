@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposal: My Fitness Club x Sigma Code</title>
+    <title>Project Proposal | My Fitness Club x Sigma Code</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
         rel="stylesheet">
@@ -16,7 +16,6 @@
             --border: #222;
             --text-gray: #A0A0A0;
             --white: #FFFFFF;
-            --card-glow: rgba(255, 95, 0, 0.1);
         }
 
         * {
@@ -34,19 +33,20 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--black);
             color: var(--white);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 5%;
         }
 
+        /* --- Navigation --- */
         nav {
-            padding: 20px 0;
+            padding: 30px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -56,127 +56,81 @@
         .sigma-logo {
             font-weight: 800;
             font-size: 0.9rem;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: var(--orange);
             text-transform: uppercase;
         }
 
+        /* --- Header --- */
         header {
-            min-height: 85vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         .badge {
-            background: rgba(255, 95, 0, 0.1);
+            border: 1px solid var(--orange);
             color: var(--orange);
             padding: 8px 16px;
-            border-radius: 4px;
+            border-radius: 2px;
             font-size: 11px;
             font-weight: 800;
             letter-spacing: 2px;
             display: inline-block;
             margin-bottom: 24px;
-            border: 1px solid var(--orange);
+            text-transform: uppercase;
         }
 
         h1 {
             font-family: 'Oswald', sans-serif;
-            font-size: clamp(3.5rem, 12vw, 7.5rem);
-            line-height: 0.85;
+            font-size: clamp(3.5rem, 12vw, 7rem);
+            line-height: 0.9;
             text-transform: uppercase;
             margin-bottom: 30px;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
         }
 
         .hero-desc {
-            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-size: 1.2rem;
             color: var(--text-gray);
-            max-width: 650px;
-            margin-bottom: 50px;
+            max-width: 700px;
+            margin-bottom: 60px;
         }
 
+        /* --- Value Grid --- */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
-        .top-tier-card {
-            background: linear-gradient(145deg, #151515, #0a0a0a);
-            padding: 40px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .top-tier-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--orange), transparent);
-            transform: translateX(-100%);
-            transition: 0.6s;
-        }
-
-        .top-tier-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 95, 0, 0.4);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--card-glow);
-        }
-
-        .top-tier-card:hover::before {
-            transform: translateX(100%);
-        }
-
-        .tier-icon {
-            font-size: 12px;
-            font-weight: 900;
-            color: var(--orange);
-            margin-bottom: 15px;
-            display: block;
-            letter-spacing: 2px;
-        }
-
-        .top-tier-card h3 {
-            font-family: 'Oswald';
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            color: var(--white);
-        }
-
-        .top-tier-card p {
-            font-size: 14px;
-            color: var(--text-gray);
-            line-height: 1.5;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .card {
+        .value-card {
             background: var(--surface);
             padding: 40px;
             border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: 0.3s;
+            transition: 0.4s ease;
         }
 
-        .card:hover {
+        .value-card:hover {
             border-color: var(--orange);
+            transform: translateY(-5px);
         }
 
+        .value-card h3 {
+            font-family: 'Oswald';
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin: 15px 0;
+        }
+
+        .value-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+        }
+
+        /* --- Sections --- */
         section {
             padding: 100px 0;
             border-top: 1px solid var(--border);
@@ -189,208 +143,182 @@
             margin-bottom: 50px;
         }
 
-        .blueprint-item {
-            padding: 40px 0;
+        /* --- Sitemap Style --- */
+        .sitemap-container {
+            border-top: 1px solid var(--border);
+        }
+
+        .sitemap-card {
+            padding: 45px 0;
             border-bottom: 1px solid var(--border);
+            transition: 0.3s;
         }
 
-        .blueprint-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
+        .sitemap-card:hover {
+            padding-left: 20px;
         }
 
-        .page-num {
+        .page-tag {
             color: var(--orange);
+            font-size: 10px;
             font-weight: 800;
-            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .page-title {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .sitemap-card h3 {
+            font-family: 'Oswald';
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
-        .page-content {
+        .sitemap-card p {
             color: var(--text-gray);
-            font-size: 1rem;
             max-width: 850px;
+            font-size: 1.05rem;
         }
 
-        .timeline-wrapper {
-            position: relative;
-            max-width: 800px;
-            margin: 0;
+        /* --- Timeline Styles --- */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .timeline-item {
             position: relative;
-            padding-left: 30px;
-            padding-bottom: 40px;
-            border-left: 1px solid var(--border);
+            padding-top: 30px;
+            border-top: 2px solid var(--border);
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -6px;
-            top: 0;
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
+            top: -6px;
+            left: 0;
+            width: 10px;
+            height: 10px;
             background: var(--orange);
-            box-shadow: 0 0 10px var(--orange);
+            border-radius: 50%;
         }
 
-        .timeline-item:last-child {
-            border-left: 1px solid transparent;
-        }
-
-        .timeline-tag {
-            font-size: 11px;
-            font-weight: 800;
+        .timeline-step {
             color: var(--orange);
-            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 11px;
             letter-spacing: 1px;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             display: block;
         }
 
-        .timeline-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 5px;
+        .timeline-item h4 {
+            font-family: 'Oswald';
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
         }
 
-        .timeline-content p {
+        .timeline-item p {
+            font-size: 0.9rem;
             color: var(--text-gray);
-            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
-        .pricing-table {
-            background: var(--black);
-            color: var(--orange);
-            border-radius: 12px;
-            padding: clamp(30px, 5vw, 60px);
-            margin-top: 40px;
-            position: relative;
+        /* --- Features --- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            padding: 40px;
             border: 1px solid var(--border);
         }
 
-        .advance-badge {
+        .feature-card h3 {
+            color: var(--orange);
+            font-family: 'Oswald';
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+
+        /* --- Pricing --- */
+        .pricing-box {
+            border: 1px solid var(--border);
+            padding: clamp(30px, 5vw, 60px);
+            background: #0a0a0a;
+            position: relative;
+        }
+
+        .advance-label {
             position: absolute;
             top: -15px;
             right: 40px;
             background: var(--orange);
-            color: var(--white);
-            padding: 10px 20px;
+            color: #000;
+            padding: 8px 20px;
             font-weight: 800;
-            font-size: 12px;
-            border-radius: 4px;
-            box-shadow: 0 10px 20px rgba(255, 95, 0, 0.3);
+            font-size: 11px;
+            text-transform: uppercase;
         }
 
-        .pricing-row {
+        .price-row {
             display: flex;
             justify-content: space-between;
             padding: 18px 0;
-            border-bottom: 1px dotted #444;
-            font-weight: 600;
-        }
-
-        .advance-row {
-            background: rgba(255, 95, 0, 0.05);
-            color: var(--orange);
-            border-bottom: 2px solid var(--orange) !important;
+            border-bottom: 1px solid #222;
+            font-weight: 500;
         }
 
         .total-highlight {
             margin-top: 40px;
-            background: var(--surface);
-            color: var(--white);
-            padding: 30px;
-            border-radius: 8px;
+            padding-top: 30px;
+            border-top: 2px solid var(--orange);
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
             flex-wrap: wrap;
             gap: 20px;
         }
 
         .total-price {
             font-family: 'Oswald';
-            font-size: 2.5rem;
+            font-size: 4rem;
             color: var(--orange);
+            line-height: 1;
         }
 
-        .cta-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 40px;
-        }
-
+        /* --- Buttons --- */
         .btn {
-            padding: 18px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: 0.3s;
-            text-align: center;
-        }
-
-        .btn-outline {
+            display: inline-block;
+            padding: 18px 40px;
             border: 2px solid var(--orange);
             color: var(--white);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 95, 0, 0.3);
             background: var(--orange);
             color: #000;
-        }
-
-        @media (max-width: 1024px) {
-            .grid-3 {
-                grid-template-columns: 1fr 1fr;
-            }
+            transform: translateY(-3px);
         }
 
         @media (max-width: 768px) {
-            h1 {
-                letter-spacing: -1px;
-            }
-
-            .grid-3,
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-
-            .blueprint-header {
-                flex-direction: column;
-            }
-
-            .total-highlight {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .cta-group {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .advance-badge {
-                right: 20px;
-                left: 20px;
-                text-align: center;
-            }
+            .grid-3, .grid-2 { grid-template-columns: 1fr; }
+            .total-highlight { flex-direction: column; align-items: flex-start; }
+            h1 { font-size: 4rem; }
+            .timeline-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -400,194 +328,185 @@
     <div class="container">
         <nav>
             <div class="sigma-logo">Sigma Code Design</div>
-            <div style="font-size: 11px; color: var(--text-gray);">PROJECT: MY FITNESS CLUB</div>
+            <div style="font-size: 11px; color: var(--text-gray); letter-spacing: 1px;">FOR: MY FITNESS CLUB</div>
         </nav>
 
         <header>
-            <div class="badge">PREMIUM WEB ARCHITECTURE</div>
-            <h1>MY FITNESS<br><span style="color: var(--orange);">CLUB.</span></h1>
-            <p class="hero-desc">Elevating <strong>Tej Joshi’s</strong> vision into a premium digital experience. A
-                bold, high-contrast, and fully responsive engine built for the next generation of athletes.</p>
+            <div class="badge"> Website Proposal</div>
+            <h1>MY FITNESS<br><span style="color: var(--orange);">CLUB</span></h1>
+            <p class="hero-desc">We are building a premium digital home for <strong>Tej Joshi’s</strong> fitness vision.
+                This platform is designed to look elite, load instantly, and turn visitors into members.</p>
 
             <div class="grid-3">
-                <div class="top-tier-card">
-                    <span class="tier-icon">01 // VISUALS</span>
-                    <h3>Elite UI/UX</h3>
-                    <p>Bespoke matte-black design paired with aggressive orange accents. A minimalist, high-authority
-                        interface built to dominate.</p>
+                <div class="value-card">
+                    <div style="color:var(--orange); font-weight:900;">01</div>
+                    <h3>Elite Design Appearance</h3>
+                    <p>A custom design that reflects the strength and premium nature of your gym.</p>
                 </div>
-                <div class="top-tier-card">
-                    <span class="tier-icon">02 // ENGINE</span>
-                    <h3>Adaptive Flow</h3>
-                    <p>Pixel-perfect responsiveness across all devices. Your brand feels premium whether on a smartphone
-                        or a 4K monitor.</p>
+                <div class="value-card">
+                    <div style="color:var(--orange); font-weight:900;">02</div>
+                    <h3>High-Performance Speed</h3>
+                    <p>We use modern coding standards to ensure the site opens seconds.</p>
                 </div>
-                <div class="top-tier-card">
-                    <span class="tier-icon">03 // SPEED</span>
-                    <h3>Nitro Load</h3>
-                    <p>Sub-second loading times powered by optimized asset delivery. Because high-performance athletes
-                        don't wait.</p>
+                <div class="value-card">
+                    <div style="color:var(--orange); font-weight:900;">03</div>
+                    <h3>Mobile-Optimized Design</h3>
+                    <p>Perfectly optimized for smartphones, where 90% of your members will view your site.</p>
                 </div>
             </div>
         </header>
 
-        <section id="features">
-            <span style="color: var(--orange); font-weight: 800; font-size: 12px; letter-spacing: 3px;">CORE CAPABILITIES</span>
-            <h2>Key Website Features</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3 style="color: var(--orange); margin-bottom: 15px; font-family: 'Oswald';">Performance-First Engine</h3>
-                    <p style="color: var(--text-gray);">Optimized for under 1.5s load times. We use modern WebP images and minified code to ensure members can access your site even on weak mobile signals.</p>
-                </div>
-                <div class="card">
-                    <h3 style="color: var(--orange); margin-bottom: 15px; font-family: 'Oswald';">Mobile-Optimized UX</h3>
-                    <p style="color: var(--text-gray);">Designed for one-handed use. Large tap targets and a clean mobile menu make it easy for users to check timings or membership fees mid-workout.</p>
-                </div>
-                <div class="card">
-                    <h3 style="color: var(--orange); margin-bottom: 15px; font-family: 'Oswald';">WhatsApp Lead Capture</h3>
-                    <p style="color: var(--text-gray);">Direct integration with WhatsApp API. Prospective members can click a single button to start a chat with you instantly, increasing conversion rates.</p>
-                </div>
-                <div class="card">
-                    <h3 style="color: var(--orange); margin-bottom: 15px; font-family: 'Oswald';">Dynamic Gallery</h3>
-                    <p style="color: var(--text-gray);">A premium "Elite Facility" showcase with hover animations and lightboxes to highlight your gym's equipment and atmosphere in high resolution.</p>
-                </div>
-            </div>
-        </section>
+        <section id="sitemap">
+            <span style="color: var(--orange); font-weight: 800; font-size: 12px; letter-spacing: 2px;">THE STRUCTURE</span>
+            <h2>How the site works</h2>
+            <p style="color: var(--text-gray); max-width: 800px; margin-bottom: 40px;">Each page is designed with a
+                specific goal: to show quality and build trust.</p>
 
-        <section id="blueprint">
-            <span style="color: var(--orange); font-weight: 800; font-size: 12px; letter-spacing: 3px;">THE ARCHITECTURE</span>
-            <h2>Detailed Page Breakdown</h2>
-
-            <div class="blueprint-item">
-                <div class="blueprint-header">
-                    <div class="page-title">01. Home: The Powerhouse</div>
-                    <div class="page-num">HOME</div>
+            <div class="sitemap-container">
+                <div class="sitemap-card">
+                    <div class="page-tag">First Impression</div>
+                    <h3>01. Home Page</h3>
+                    <p>The "Digital Reception." It showcases your best features, transformation stories, and a direct
+                        invitation for new members to join.</p>
                 </div>
-                <div class="page-content">High-impact hero section with aggressive branding. Includes a transformation slider, quick membership links, and an overview of the "My Fitness Club" philosophy.</div>
-            </div>
 
-            <div class="blueprint-item">
-                <div class="blueprint-header">
-                    <div class="page-title">02. The Story: Tej Joshi's Vision</div>
-                    <div class="page-num">ABOUT</div>
+                <div class="sitemap-card">
+                    <div class="page-tag">Trust & Authority</div>
+                    <h3>02. About: The Mission</h3>
+                    <p>Highlights Tej Joshi’s vision and the club's journey. This builds a personal connection with
+                        potential members.</p>
                 </div>
-                <div class="page-content">Builds trust and authority. Highlights the club's mission, the owner's journey, and what makes this gym the premier choice in the region.</div>
-            </div>
 
-            <div class="blueprint-item">
-                <div class="blueprint-header">
-                    <div class="page-title">03. Services: Training & Tiers</div>
-                    <div class="page-num">SERVICES</div>
+                <div class="sitemap-card">
+                    <div class="page-tag">Services & Pricing</div>
+                    <h3>03. Training Programs</h3>
+                    <p>A clear list of Weight Training, Cardio, and PT sessions. We make it easy for users to understand
+                        your membership tiers.</p>
                 </div>
-                <div class="page-content">A breakdown of Weight Training, Cardio, Personal Training packages, and specialized group sessions. Clearly defined benefits for each tier.</div>
-            </div>
 
-            <div class="blueprint-item">
-                <div class="blueprint-header">
-                    <div class="page-title">04. Facility: Elite Environment</div>
-                    <div class="page-num">GALLERY</div>
+                <div class="sitemap-card">
+                    <div class="page-tag">Virtual Tour</div>
+                    <h3>04. Gallery: The Facility</h3>
+                    <p>High-quality photos of your equipment and gym floor. Seeing the facility is the #1 reason people
+                        decide to visit in person.</p>
                 </div>
-                <div class="page-content">A visual tour of the gym floor. Optimized image grids showing off the premium equipment, locker rooms, and workout zones.</div>
-            </div>
 
-            <div class="blueprint-item" style="border-bottom: none;">
-                <div class="blueprint-header">
-                    <div class="page-title">05. Connect: Location & Support</div>
-                    <div class="page-num">CONTACT</div>
+                <div class="sitemap-card" style="border-bottom: none;">
+                    <div class="page-tag">Action Page</div>
+                    <h3>05. Contact & Support</h3>
+                    <p>Includes a live Google Map for directions and a one-click WhatsApp button for instant inquiries.
+                    </p>
                 </div>
-                <div class="page-content">Google Maps integration (styled in Dark Mode), direct call/WhatsApp buttons, and a simple enquiry form for membership leads.</div>
             </div>
         </section>
 
         <section id="timeline">
-            <span style="color: var(--orange); font-weight: 800; font-size: 12px; letter-spacing: 3px;">THE ROADMAP</span>
+            <span style="color: var(--orange); font-weight: 800; font-size: 12px; letter-spacing: 2px;">THE 30-DAY ROADMAP</span>
             <h2>Execution Timeline</h2>
-
-            <div class="timeline-wrapper">
+            <p style="color: var(--text-gray); max-width: 800px;">A transparent schedule to take your project from the first deposit to a live launch.</p>
+            
+            <div class="timeline-grid">
                 <div class="timeline-item">
-                    <span class="timeline-tag">Week 1 (7-10 Days)</span>
-                    <div class="timeline-content">
-                        <h3>Design & Wireframing</h3>
-                        <p>Creating the matte-black UI identity, page layouts, and selecting premium typography for your approval.</p>
-                    </div>
+                    <span class="timeline-step">WEEK 1 (DAYS 1-7)</span>
+                    <h4>Strategy & Wireframing</h4>
+                    <p>Analyzing your brand goals and creating the blueprint to ensure members find exactly what they need.</p>
                 </div>
-
                 <div class="timeline-item">
-                    <span class="timeline-tag">Week 2-3 (10-12 Days)</span>
-                    <div class="timeline-content">
-                        <h3>Core Development</h3>
-                        <p>Converting designs into high-performance code, ensuring full responsiveness for all mobile devices.</p>
-                    </div>
+                    <span class="timeline-step">WEEK 2 (DAYS 8-15)</span>
+                    <h4>Design Phase</h4>
+                    <p>Crafting the custom visual theme. We focus on premium dark aesthetics that represent My Fitness Club.</p>
                 </div>
-
                 <div class="timeline-item">
-                    <span class="timeline-tag">Week 4 (4-5 Days)</span>
-                    <div class="timeline-content">
-                        <h3>Optimization & SEO</h3>
-                        <p>Speed optimization, basic SEO indexing, and integration of maps/WhatsApp contact points.</p>
-                    </div>
+                    <span class="timeline-step">WEEK 3 (DAYS 16-23)</span>
+                    <h4>Core Development</h4>
+                    <p>Coding the website features, mobile optimization, and integrating your direct WhatsApp lead system.</p>
                 </div>
+                <div class="timeline-item" style="border-top: 2px solid var(--orange);">
+                    <span class="timeline-step">WEEK 4 (DAYS 24-30)</span>
+                    <h4>Testing & Launch</h4>
+                    <p>Rigorous speed testing and mobile checks before making the site live on your chosen domain.</p>
+                </div>
+            </div>
+        </section>
 
-                <div class="timeline-item">
-                    <span class="timeline-tag">Final Week</span>
-                    <div class="timeline-content">
-                        <h3>Testing & Handover</h3>
-                        <p>Final testing on all browsers and official project handover with documentation.</p>
-                    </div>
+        <section>
+            <span style="color: var(--orange); font-weight: 800; font-size: 12px; letter-spacing: 2px;">KEY CAPABILITIES</span>
+            <h2>Premium Features</h2>
+            <div class="grid-2">
+                <div class="feature-card">
+                    <h3>WhatsApp Integration</h3>
+                    <p style="color: var(--text-gray);">Potential members can start a chat with you instantly with one
+                        tap. This is the fastest way to get new leads.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Performance</h3>
+                    <p style="color: var(--text-gray);">The site is built to be "lightweight," ensuring it works even on
+                        slow mobile internet connections.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>SEO Indexing</h3>
+                    <p style="color: var(--text-gray);">We set up your site so people in your city can find you when
+                        they search for "gyms near me."</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Easy Navigation</h3>
+                    <p style="color: var(--text-gray);">A menu designed for one-handed thumb use, making it effortless
+                        to browse on a smartphone.</p>
                 </div>
             </div>
         </section>
 
         <section id="pricing">
             <h2>Investment Summary</h2>
-            <div class="pricing-table">
-                <div class="advance-badge">PROJECT KICKSTARTER</div>
+            <div class="pricing-box">
+                <div class="advance-label">Starter Deposit</div>
 
-                <div class="pricing-row advance-row">
-                    <span>MANDATORY ADVANCE PAYMENT</span>
+                <div class="price-row"
+                    style="color: var(--orange); font-weight: 800; border-bottom: 2px solid var(--orange);">
+                    <span>MANDATORY STARTUP ADVANCE</span>
                     <span>₹3,000</span>
                 </div>
-                <div class="pricing-row"><span>UI and UX Design</span><span>₹3,000</span></div>
-                <div class="pricing-row"><span>Website Development</span><span>₹4,000</span></div>
-                <div class="pricing-row"><span>Responsive Optimization</span><span>₹1,500</span></div>
-                <div class="pricing-row"><span>Basic SEO Setup</span><span>₹1,000</span></div>
-                <div class="pricing-row" style="border: none;"><span>Testing & Delivery</span><span>₹500</span></div>
+                <div class="price-row"><span>Custom UI/UX Design Phase</span><span>₹4,000</span></div>
+                <div class="price-row"><span>Full Website Development</span><span>₹3,000</span></div>
+                <div class="price-row"><span>Mobile Optimization & SEO</span><span>₹2000</span></div>
+                <div class="price-row" style="border: none;"><span>Testing & Handover</span><span>₹1000</span></div>
 
                 <div class="total-highlight">
                     <div>
-                        <div style="font-size: 11px; opacity: 0.7; letter-spacing: 2px;">TOTAL PROJECT VALUE</div>
+                        <div style="font-size: 11px; opacity: 0.7; letter-spacing: 2px; margin-bottom: 5px;">TOTAL
+                            PROJECT VALUE</div>
                         <div class="total-price">₹10,000</div>
                     </div>
                     <div style="text-align: right;">
-                        <p style="font-size: 14px; font-weight: 700;">Balance: ₹7,000 (On Delivery)</p>
-                        <p style="font-size: 11px; opacity: 0.5;">*Excluding Domain & Hosting</p>
+                        <p style="font-size: 1.1rem; font-weight: 700;">Remaining Balance: ₹7,000</p>
+                        <p style="font-size: 12px; opacity: 0.5;">*Domain and hosting will be purchased by the client separately.</p>
                     </div>
                 </div>
             </div>
-            <p style="margin-top: 20px; color: var(--text-gray); font-size: 13px;">
-                <em>* Note: The advance payment is required to initiate the Design Phase.</em>
+            <p style="margin-top: 25px; color: var(--text-gray); font-size: 0.9rem;">
+                * Note: The advance payment is required to begin the Design and Research phase.
             </p>
         </section>
 
-        <section style="border: none; padding-bottom: 150px;">
+        <footer style="padding: 80px 0 150px;">
             <div class="grid-2">
                 <div>
-                    <h2>Sigma Code Reliability</h2>
-                    <p style="color: var(--text-gray); margin-bottom: 20px;">We don't just deliver code; we deliver a long-term business asset that grows your fitness empire.</p>
-
-                    <div class="cta-group">
-                        <a href="https://sigmacodedesign.github.io/Sigma-Code-Design/" class="btn btn-outline">Official Portfolio</a>
-                    </div>
+                    <h2>Let's build your brand.</h2>
+                    <p style="color: var(--text-gray); margin-bottom: 40px; max-width: 400px;">We don't just provide
+                        code; we provide a long-term business asset to help My Fitness Club grow.</p>
+                    <a href="https://sigmacodedesign.github.io/Sigma-Code-Design/" class="btn">Our Portfolio</a>
                 </div>
-                <div class="card" style="display: flex; flex-direction: column; justify-content: center;">
-                    <p style="font-size: 12px; color: var(--orange); font-weight: 800; letter-spacing: 2px; margin-bottom: 10px;">CONTACT US</p>
-                    <p style="font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 5px;">+91 90239 92728</p>
-                    <p style="font-size: 1.1rem; font-weight: 400; color: var(--text-gray);">sigmacode.design@gmail.com</p>
-                    <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
-                    <p style="font-size: 14px; color: var(--text-gray);">Designed & Coded with Excellence by Sigma Code Design Team.</p>
+                <div style="background: var(--surface); padding: 40px; border: 1px solid var(--border);">
+                    <p
+                        style="font-size: 11px; color: var(--orange); font-weight: 800; letter-spacing: 2px; margin-bottom: 10px;">
+                        DIRECT CONTACT</p>
+                    <p style="font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 5px;">+91 90239 92728</p>
+                    <p style="font-size: 1rem; color: var(--text-gray);">sigmacode.design@gmail.com</p>
+                    <hr style="border: 0; border-top: 1px solid var(--border); margin: 25px 0;">
+                    <p style="font-size: 13px; color: var(--text-gray);">Sigma Code Design Team — Delivering Excellence.</p>
                 </div>
             </div>
-        </section>
+        </footer>
     </div>
 
 </body>
